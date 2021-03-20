@@ -1254,7 +1254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ipText: {fileID: 1759975854}
-  rcvText: {fileID: 1765123001}
   obj: {fileID: 1280463431}
   touchProcessor: {fileID: 371470039}
   faceTracker: {fileID: 1494170424}
@@ -1290,6 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchProcessor: {fileID: 371470039}
   faceTracker: {fileID: 1494170424}
+  debugText: {fileID: 1765123001}
 --- !u!4 &1020034788
 Transform:
   m_ObjectHideFlags: 0

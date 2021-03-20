@@ -12,7 +12,6 @@ using UnityEngine.UI;
 public class ServerController : MonoBehaviour {
 
 	public Text ipText;
-	public Text rcvText;
 	public GameObject obj;
 	public GameObject touchProcessor;
 	public GameObject faceTracker;
@@ -40,7 +39,6 @@ public class ServerController : MonoBehaviour {
 	
 	void Update () {
 		ipText.text = getIPAddress();
-		rcvText.text = rcvMsg;
 		renderCamera.backgroundColor = (connectedTcpClient == null ? disconnectColor : connectColor);
 		if (connectedTcpClient != null && noConnection) {
 			sendMessage();
@@ -80,6 +78,7 @@ public class ServerController : MonoBehaviour {
 	public void sendMessage() {
 		Vector3 tp = touchProcessor.GetComponent<TouchProcessor>().pos;
 		Vector3 tv = faceTracker.GetComponent<FaceTracker>().currentObserve;
+		Vector3 acc = Input.acceleration;
 		if (connectedTcpClient == null) {
 			return;
 		}
@@ -93,7 +92,10 @@ public class ServerController : MonoBehaviour {
 					tp.z + "," +
 					tv.x + "," +
 					tv.y + "," +
-					tv.z + ","
+					tv.z + "," +
+					acc.x + "," +
+					acc.y + "," +
+					acc.z + ","
 					;
 				byte[] serverMessageAsByteArray = Encoding.ASCII.GetBytes(serverMessage);
 				stream.Write(serverMessageAsByteArray, 0, serverMessageAsByteArray.Length);

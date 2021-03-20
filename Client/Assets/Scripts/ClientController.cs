@@ -131,6 +131,8 @@ public class ClientController : MonoBehaviour {
 		}
 		Vector3 view = new Vector3(System.Convert.ToSingle(temp[3]), System.Convert.ToSingle(temp[4]), System.Convert.ToSingle(temp[5]));
 		obj.GetComponent<ModelController>().observe = convertFromServer(view);
+		Vector3 acc = new Vector3(System.Convert.ToSingle(temp[6]), System.Convert.ToSingle(temp[7]), System.Convert.ToSingle(temp[8]));
+		sliderController.GetComponent<SliderController>().acceOther = acc;
 	}
 
 	public void connect() {

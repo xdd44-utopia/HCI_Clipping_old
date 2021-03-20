@@ -27,8 +27,8 @@ public class FaceTracker : MonoBehaviour
 	private float correction = 0.2f;
 	private float smoothSpeed = 20f;
 	private float smoothTolerance = 0.01f;
-	private float observationScalePlaner = 10f;
-	private float observationScaleVertical = 10f;
+	private float observationScalePlaner = 30f;
+	private float observationScaleVertical = 50f;
 	private float observeMoveSensitive = 0.05f;
 	// Start is called before the first frame update
 	void Start()

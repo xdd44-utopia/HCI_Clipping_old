@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FrameController : MonoBehaviour
 {
 	public GameObject touchProcessor;
 	public GameObject faceTracker;
+	public Text debugText;
 	private float lineWidth = 0.025f;
 
 
@@ -39,6 +41,8 @@ public class FrameController : MonoBehaviour
 		observe = faceTracker.GetComponent<FaceTracker>().currentObserve;
 		angle = touchProcessor.GetComponent<TouchProcessor>().angle;
 
+		debugText.text = "" + 180 * angle / Mathf.PI;
+
 		Vector3 camPos = new Vector3(observe.x, observe.y, 0);
 		lineRenderer.SetPosition(0, new Vector3(
 			camWidth,
@@ -46,14 +50,14 @@ public class FrameController : MonoBehaviour
 			0
 		));
 		lineRenderer.SetPosition(1, new Vector3(
-			2 * camWidth * Mathf.Cos(Mathf.PI - angle) - camWidth,
+			camWidth - 2 * camWidth * Mathf.Cos(Mathf.PI - angle),
 			- camHeight,
-			2 * camWidth * Mathf.Sin(Mathf.PI - angle)
+			2 * camWidth * Mathf.Sin(angle)
 		));
 		lineRenderer.SetPosition(2, new Vector3(
-			2 * camWidth * Mathf.Cos(Mathf.PI - angle) - camWidth,
+			camWidth - 2 * camWidth * Mathf.Cos(Mathf.PI - angle),
 			camHeight,
-			2 * camWidth * Mathf.Sin(Mathf.PI - angle)
+			2 * camWidth * Mathf.Sin(angle)
 		));
 		lineRenderer.SetPosition(3, new Vector3(
 			camWidth,
