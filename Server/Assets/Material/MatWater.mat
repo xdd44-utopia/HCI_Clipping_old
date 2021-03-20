@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MatWater
-  m_Shader: {fileID: 4800000, guid: e36c7f15551493149a0ed29049dcc854, type: 3}
+  m_Shader: {fileID: 4800000, guid: 71bda2cce727240bf96672b4e51ed33b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2200
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
